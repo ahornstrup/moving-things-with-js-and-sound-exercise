@@ -1,4 +1,3 @@
-// Your code here
 "use strict";
 
 const dodger = document.getElementById("dodger");
@@ -27,3 +26,51 @@ document.addEventListener("keydown", function (event) {
         moveDodgerDown();
     }
 });
+
+function moveDodgerLeft() {
+    const leftNumbers = dodger.style.left.replace("px", "");
+    const left = parseInt(leftNumbers, 10);
+
+    if (left > 0) {
+    dodger.style.left = `${left - 10}px`;
+} else {
+    playGameOverSound();
+}
+    playSoundOnMovement();
+}
+
+function moveDodgerRight() {
+    const leftNumbers = dodger.style.left.replace("px", "");
+    const left = parseInt(leftNumbers, 10);
+
+    if (left < 360) {
+        dodger.style.left = `${left + 10}px`;
+    } else {
+        playGameOverSound();
+    }
+    playSoundOnMovement();
+}
+
+function moveDodgerUp() {
+    const bottomNumbers = dodger.style.bottom.replace("px", "");
+    const bottom = parseInt(bottomNumbers, 10);
+
+    if (bottom < 360) {
+        dodger.style.bottom = `${bottom + 10}px`;
+    } else {
+        playGameOverSound();
+    }
+    playSoundOnMovement();
+}
+
+function moveDodgerDown() {
+    const bottomNumbers = dodger.style.bottom.replace("px", "");
+    const bottom = parseInt(bottomNumbers, 10);
+
+    if (bottom > 0) {
+        dodger.style.bottom = `${bottom - 10}px`;
+    } else {
+        playGameOverSound();
+    }
+    playSoundOnMovement();
+}
