@@ -74,3 +74,17 @@ function moveDodgerDown() {
     }
     playSoundOnMovement();
 }
+
+const movementSound = document.getElementById("movementSound");
+
+function playSoundOnMovement() {
+    movementSound.currentTime = 0;
+    movementSound.play();
+}
+
+const gameoverSound = document.getElementById("gameoverSound");
+
+function playGameOverSound() {
+    gameoverSound.currentTime = 0;
+    gameoverSound.play();
+}
